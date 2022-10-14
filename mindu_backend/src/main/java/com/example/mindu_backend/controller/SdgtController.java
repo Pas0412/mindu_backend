@@ -26,7 +26,9 @@ public class SdgtController {
         //排序条件
 //        queryWrapper.orderByAsc(Sdgt::getSort);
         //条件查询
-        queryWrapper.like(StringUtils.isNotEmpty(lessee), Sdgt::getLessee, lessee);
+        if(lessee != null){
+            queryWrapper.like(StringUtils.isNotEmpty(lessee), Sdgt::getLessee, lessee);
+        }
         //分页查询
         sdgtService.page(pageInfo, queryWrapper);
         return R.success(pageInfo);

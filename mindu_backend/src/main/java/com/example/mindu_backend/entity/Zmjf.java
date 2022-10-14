@@ -9,11 +9,9 @@ import java.io.Serializable;
 import java.math.BigInteger;
 
 @Data
-@TableName(value="水调歌头房产租赁明细表")
-public class Sdgt implements Serializable {
+@TableName(value="中闽建发物业有限公司房产租赁明细表")
+public class Zmjf implements Serializable {
     private static final long serialVersionUID = 1L;
-
-//    private int id;
 
     @TableField(value = "id")
     private int id;
@@ -24,17 +22,23 @@ public class Sdgt implements Serializable {
     @TableField(value = "产权地址")
     private String ownerAddress;
 
+    @TableField(value = "楼盘名称")
+    private String flatName;
+
     @TableField(value = "性质")
     private String properties;
 
-    @TableField(value = "用途")
-    private String purpose;
+    @TableField(value = "使用情况")
+    private String situation;
 
-    @TableField(value = "承租方")
+    @TableField(value = "承租户")
     private String lessee;
 
     @TableField(value = "产权面积")
     private float ownSurface;
+
+    @TableField(value = "车位数")
+    private int parkingNum;
 
     @TableField(value = "自用面积")
     private float selfSurface;
@@ -54,11 +58,20 @@ public class Sdgt implements Serializable {
     @TableField(value = "月租金")
     private float monthlyRent;
 
-    @TableField(value = "递增率")
+    @TableField(value = "年递增")
     private int incrementalRate;
 
-    @TableField(value = "递增时间")
+    @TableField(value = "年递增时间")
     private String incrementalTime;
+
+    @TableField(value = "递增后月租金")
+    private float afterMonthlyRent;
+
+    @TableField(value = "年递增时间2")
+    private String incrementalTime2;
+
+    @TableField(value = "递增后月租金2")
+    private float afterMonthlyRent2;
 
     @TableField(value = "合同起始")
     private String contractStart;
@@ -66,13 +79,25 @@ public class Sdgt implements Serializable {
     @TableField(value = "合同到期")
     private String contractClose;
 
-    @TableField(value = "租赁年限")
+    @TableField(value = "租赁时间")
     private int leaseTerm;
 
-    @TableField(value = "合同总价")
-    private BigInteger totalPrice;
+    @TableField(value = "付款方式")
+    private String payment;
 
-    @TableField(value = "交付日期")
-    private String deliveryDate;
+    @TableField(value = "收款人")
+    private String payee;
+
+    @TableField(value = "收租情况")
+    private String situationCollection;
+
+    @TableField(value = "联系人")
+    private String contact;
+
+    @TableField(value = "联系电话")
+    private String telephone;
+
+    @TableField(value = "备注")
+    private String note;
 
 }
