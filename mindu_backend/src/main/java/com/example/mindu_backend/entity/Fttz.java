@@ -3,14 +3,12 @@ package com.example.mindu_backend.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-import lombok.Value;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 @Data
-@TableName(value="中闽建发物业有限公司房产租赁明细表")
-public class Zmjf implements Serializable {
+@TableName(value = "福投投资公司房产租赁明细表")
+public class Fttz implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableField(value = "id")
@@ -28,10 +26,10 @@ public class Zmjf implements Serializable {
     @TableField(value = "性质")
     private String properties;
 
-    @TableField(value = "使用情况")
-    private String situation;
+    @TableField(value = "用途")
+    private String purpose;
 
-    @TableField(value = "承租户")
+    @TableField(value = "承租方")
     private String lessee;
 
     @TableField(value = "产权面积")
@@ -58,9 +56,6 @@ public class Zmjf implements Serializable {
     @TableField(value = "月租金")
     private float monthlyRent;
 
-    @TableField(value = "年递增")
-    private String incrementalRate;
-
     @TableField(value = "年递增时间")
     private String incrementalTime;
 
@@ -73,17 +68,20 @@ public class Zmjf implements Serializable {
     @TableField(value = "递增后月租金2")
     private float afterMonthlyRent2;
 
+    @TableField(value = "递增率")
+    private int incrementalRate;
+
     @TableField(value = "合同起始")
     private String contractStart;
 
     @TableField(value = "合同到期")
     private String contractClose;
 
-    @TableField(value = "租赁时间")
-    private int leaseTerm;
+    @TableField(value = "租赁年限")
+    private String leaseTerm;
 
     @TableField(value = "付款方式")
-    private String payment;
+    private int payment;
 
     @TableField(value = "收款人")
     private String payee;
@@ -99,5 +97,4 @@ public class Zmjf implements Serializable {
 
     @TableField(value = "备注")
     private String note;
-
 }

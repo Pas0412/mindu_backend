@@ -33,7 +33,8 @@ public class UserController {
     public R<User> login(HttpServletRequest request,@RequestBody User user) {
 //        1）将页面提交的password进行md5加密处理
         String password = user.getPassword();
-//        password = DigestUtils.md5DigestAsHex(password.getBytes());
+        password = DigestUtils.md5DigestAsHex(password.getBytes());
+        System.out.println(password);
 //        2）根据页面提交的username查询数据库（失败返回msg）
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(User::getUsername, user.getUsername());
